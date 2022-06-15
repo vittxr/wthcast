@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/wheater_page/weather_page.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/wheater_page/responsive.css') }}">
+{% extends 'pages/base.html' %}  
+  
+{% block content %}
+<main>
+    <h1>Monitoramento Climático</h1>
+    <div class="container-weatherCity">
+        <div class="search-box">
+           <form class="search-box__form" action="{{url_for('main.searchCity')}}" method="post">
+                <input class='search-input' type="text" name="search-input" placeholder="pesquisar cidade">
+                <div class="search-icon__box">
+                    <img class="search-icon" src="{{url_for('static', filename='img/search.png')}}">
+                    <input class="search-input__submit" type="submit" value="pesquisar"> 
+                </div>
+                   <!--Para ter o input submit, mas deixar apenas a imagem aparencendo, fiz com que os dois elementos tenham o mesmo tamanho e mesma posição. Assim, deixa o input com opacity: 0. Ou seja, o input está acima do ícone, mas não aparece.-->
+                   <!--O ícone de pesquisar só é usado em telas grandes (computador), nas pequenas (celulares) se usa o input de submit mesmo. -->
+           </form>
+        </div>
+
+        <h1 class="city-name">{{dataWeather['name']}}</h1>   
+        <div class="temp-container">
+            <div class="temp-subcontainer">
+                <div class="temp-type__container">
+                    <span class="temp-type">Temperatura atual</span>
+                    <div class="temp current-temp">{{dataWeather['main']['temp']}}</div>
+                </div>
+            </div>
+            <div class="temp-subcontainer">
+                <div class="temp-type__container">
+                    <span class="temp-type">Temperatura máxima</span>
+                    <div class="temp max-temp">{{dataWeather['main']['temp_max']}}</div>
+                </div>
+
+                <div class="temp-type__container">
+                    <span class="temp-type">Temperatura mínima</span>
+                    <div class="temp min-temp">{{dataWeather['main']['temp_min']}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!--Tratamento de erro: -->
+{% if error == 'cidade inválida!'%}
+<script>
+    alert('cidade inválida')
+</script>
+{% endif %}
+<script src="{{ url_for('static', filename='js/pages/wheater_page.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+
+.container-weatherCity {
+    width: 60%;
+    padding: 2rem;
+    margin: 0 auto;
+    background-color: #3E49B0; 
+ 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+ } 
+ 
+.search-box__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-box {
+    margin: 2rem;
+    position: relative
+}
+
+.search-input {
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.659);
+    border-radius: 2px;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-icon__box {
+    text-align: center;
+}
+
+.search-icon {
+    display: none;
+}
+
+.search-input__submit {
+    width: 40%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    background: #73A9D9;
+    color: white;
+    font-weight: bold;
+}
+
+.search-input__submit:hover, 
+.search-input__submit:active {
+    background: white;
+    color: #73A9D9;
+}
+
+.city-name {
+    margin-top: 4rem;
+}

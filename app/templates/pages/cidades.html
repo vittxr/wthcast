@@ -1,0 +1,80 @@
+<!--Owl carousel nav não está funcionando :c-->
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pages/cidades_page/cidades.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/carousel/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/carousel/owl.theme.default.min.css') }}">
+{% extends 'pages/base.html' %}
+
+<!--Para se separar as cidades por seções, cada uma representando um estado, usei um if para verificar se a cidade está dentre os limites das coordenadas do estado (lat e lon). Mas alguns valores são aproximados, e não estão perfeitos, como o estado de sp. -->
+{% block content %}  
+    <main class="main-container">
+        <h1 class="state-name">Paraná</h1>
+        <section class="cities-section owl-carousel owl-theme owl-loaded owl-drag">
+            {% for cidade in cidades %} 
+                {% if cidades[cidade]['coord']['lon'] < -48 and cidades[cidade]['coord']['lon'] > -54 and cidades[cidade]['coord']['lat'] < -22 and cidades[cidade]['coord']['lat'] > - 26 %}
+                        <div class="city-container item">
+                            <h1 class="city-name">{{ cidades[cidade]['name'] }}</h1>
+                            <div class="temp-container">
+                                <div class="temp-subcontainer">
+                                    <div class="temp-type__container">
+                                        <span class="temp-type">Temperatura atual</span>
+                                        <div class="temp current-temp">{{cidades[cidade]['main']['temp']}}</div>
+                                    </div>
+                                </div>
+
+                                <div class="temp-subcontainer">
+                                    <div class="temp-type__container">
+                                        <span class="temp-type">Temperatura máxima</span>
+                                        <div class="temp max-temp">{{cidades[cidade]['main']['temp_max']}}</div>
+                                    </div>
+
+                                    <div class="temp-type__container">
+                                        <span class="temp-type">Temperatura mínima</span>
+                                        <div class="temp min-temp">{{cidades[cidade]['main']['temp_min']}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                {% endif %}
+            {% endfor %}
+        </section>
+ 
+        <h1 class="state-name">São Paulo</h1>
+        <section class="cities-section owl-carousel owl-theme">
+        {% for cidade in cidades %} 
+            {% if cidades[cidade]['coord']['lon'] < -44 and cidades[cidade]['coord']['lon'] > -48 and cidades[cidade]['coord']['lat'] < -22 and cidades[cidade]['coord']['lat'] > -28 %}
+                    <div class="city-container">
+                        <h1 class="city-name">{{ cidades[cidade]['name'] }}</h1>
+                        <div class="temp-container">
+                            <div class="temp-subcontainer">
+                                <div class="temp-type__container">
+                                    <span class="temp-type">Temperatura atual</span>
+                                    <div class="temp current-temp">{{cidades[cidade]['main']['temp']}}</div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="temp-subcontainer">
+                                <div class="temp-type__container">
+                                    <span class="temp-type">Temperatura máxima</span>
+                                    <div class="temp max-temp">{{cidades[cidade]['main']['temp_max']}}</div>
+                                </div>
+
+                                <div class="temp-type__container">
+                                    <span class="temp-type">Temperatura mínima</span>
+                                    <div class="temp min-temp">{{cidades[cidade]['main']['temp_min']}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            {% endif %}
+        {% endfor %}
+        </section>
+    </main>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/widgets/carrousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/widgets/carrousel/carousel_manager.js') }}"></script>
+{% endblock %}

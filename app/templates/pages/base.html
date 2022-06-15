@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/navbar/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/shared.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/shared_responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widgets/loading.css') }}">
+</head>
+<body>
+    {% include 'widgets/navbar.html' %}
+       <!--A navegação entre pastas no Jinja parte sempre da pasta templates, mesmo que você esteja dentro de um subpasta.-->
+
+    {% block content %}{% endblock %}
+       <!--blockcontent receberá o conteúdo de um outro arquivo.-->
+
+<script type="text/javascript" src="{{url_for('static', filename='js/pace.min.js')}}"></script>
+   <!--esse script é o puglin da barra de carregamento.-->
+</body>
+</html>

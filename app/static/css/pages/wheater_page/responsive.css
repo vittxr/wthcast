@@ -1,0 +1,27 @@
+/*css para os computadores: */
+@media (min-width: 40rem) {
+    .search-box__form {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .search-input {
+        padding: 0.5rem;
+    }
+    
+    .search-icon {
+        vertical-align: middle;
+        position: absolute;
+            /*position: absolute para que o ícone não afete a centralização do .search-input.*/
+        display: flex;
+        right: 0.5rem;
+            /*0.5rem para ficar na mesma posição que o .search-input__submit.*/
+    }
+    
+    .search-input__submit {
+        width: 32px;
+        height: 32px;
+        margin: 0 0.5rem;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,97 @@
+a {
+   text-decoration: none;
+   color: white;
+}
+
+.website-tittle {
+    margin: 0 1rem;
+}
+
+.desktop-navbar {
+    display: none;
+}
+
+/*mobile-nav*/
+.mobile-navbar {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #232963;
+    color: white;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10; 
+}
+
+.toogle {
+    display: flex;
+    flex-direction: column;
+}
+
+.trace {
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 0.2rem 1rem;
+    transition: .5s ease;
+}
+
+/*sideview navbar:*/
+.sideview-navbar__container {
+    display: none;
+      /*display: none inicialmente, mas o js exibe essa div*/
+    position: fixed;
+    height: 100%;
+    width: 70%;
+    top: 0;
+    right: 0;
+    background: #1b57A6;
+    z-index: 5;
+}
+
+.sideview-navbar {
+    margin: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.principal-menu, .auth-menu {
+    margin: 2rem 0;
+    color: white;
+}
+
+.principal-menu > h2, .auth-menu > h2 {
+    color: #98DAF2;
+}
+
+.nav-link {
+    width: 100%;
+    margin: 1rem 1.2rem;
+      /*position relative, para que o ícone seja alinha a esse elemento*/
+}
+
+.icon {
+    position: absolute;
+    margin-right: 8rem;
+    vertical-align: middle;
+}
+
+.menu-item {
+    text-align: left;
+    width: 5rem;
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    padding: 0 2rem;
+} 
+
+.menu-item:hover, .menu-item:active {
+   border-bottom: 0.5px solid white;
+   cursor: pointer;
+}
+
+

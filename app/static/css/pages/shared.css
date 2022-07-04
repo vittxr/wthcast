@@ -30,7 +30,7 @@ main > h1 {
 
 .temp-type__container {
     border: 2px solid #ccc;
-    margin: 0.5rem;
+    margin: 0.5rem 0.25rem;
 }
 
 .temp-type {

@@ -10,12 +10,11 @@ def index(citySearched = None):
     global citySearchedData
     citySearchedData = getWeather('Campinas', os.getenv("WEATHER_API")) #cidade padrão
     if citySearched != None: 
-        print(citySearched)
         citySearchedData = getWeather(citySearched, os.getenv("WEATHER_API"))
 
     if citySearchedData == 404:
         #se citySearched retorna um erro de requisição, aqui se trata o erro. 
-        citySearchedData = getWeather('Campinas')
+        citySearchedData = getWeather('Campinas',  os.getenv("WEATHER_API"))
         error='cidade inválida!'
         return render_template("pages/weather_page.html", dataWeather=citySearchedData, error=error)
 

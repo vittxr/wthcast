@@ -1,1 +1,1 @@
-web: waitress-serve --port=8000 wthcast:app
+web: waitress-serve --port=$PORT wthcast:app

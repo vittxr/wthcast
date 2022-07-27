@@ -33,14 +33,12 @@
 <!--navbar p/ desktop:-->
 <nav class="desktop-navbar">
     <span class="navbar-item">
-        <h1 class="website-tittle">WeatherQuery</h1>
+        <h1 class="website-tittle">WthCast</h1>
     </span> 
     <span class="navbar-item">
         <ul>
             <a href="{{ url_for('main.index') }}"><li>Home</li></a>
             <a href="{{ url_for('main.cidades_info') }}"><li>Cidades</li></a>
-                <!--Se o usuário tiver logado, fazer desaparecer essa opção. Mas aí, teria que fazer um elemento de profile do usuário!-->
-                <!--Ideia: colocar o usuário no local do título do site, e ele podendo alterar as configurações dele clicando no ícone. Mas vou esperar aprender isso de login primeiro, para fazer melhor dps!!-->
         </ul>
     </span>
 </nav>

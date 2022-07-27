@@ -15,26 +15,13 @@
                 <a href="{{ url_for('main.cidades_info') }}"><span class="menu-item">Cidades</span></a>
             </div>
         </div>
-
-
-        <div class="auth-menu">
-            <h2>Autenticação</h2>
-            <div class="Login nav-link">
-                <div class="icon"><i class="fas fa-solid fa-sign-in"></i></div>
-                <a><span class="menu-item menu-item__login">Login</span></a>
-            </div>
-            <div class="Registro nav-link">
-                <div class="icon"><i class="fas fa-solid fa-user-plus"></i></div>
-                <a><span class="menu-item menu-item__login__registro">Registro</span></a>
-            </div>
-        </div>
     </nav>
 </div>    
 
 <!--navbar p/ mobile: -->
 <nav class="mobile-navbar">
     <span class="navbar-item">
-        <h1 class="website-tittle">WeatherQuery</h1>
+        <h1 class="website-tittle">WthCast</h1>
     </span> 
     <span class="toogle">
         <span class="trace"></span>
@@ -52,7 +39,6 @@
         <ul>
             <a href="{{ url_for('main.index') }}"><li>Home</li></a>
             <a href="{{ url_for('main.cidades_info') }}"><li>Cidades</li></a>
-            <li>Sing Up</li>
                 <!--Se o usuário tiver logado, fazer desaparecer essa opção. Mas aí, teria que fazer um elemento de profile do usuário!-->
                 <!--Ideia: colocar o usuário no local do título do site, e ele podendo alterar as configurações dele clicando no ícone. Mas vou esperar aprender isso de login primeiro, para fazer melhor dps!!-->
         </ul>

@@ -8,7 +8,7 @@
     <div class="container-weatherCity">
         <div class="search-box">
            <form class="search-box__form" action="{{url_for('main.searchCity')}}" method="post">
-                <input class='search-input' type="text" name="search-input" placeholder="pesquisar cidade">
+                <input class='search-input' type="text" name="search-input" placeholder="pesquisar cidade" required pattern="\S(.*\S)?">
                 <div class="search-icon__box">
                     <img class="search-icon" src="{{url_for('static', filename='img/search.png')}}">
                     <input class="search-input__submit" type="submit" value="pesquisar"> 

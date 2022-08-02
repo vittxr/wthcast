@@ -12,7 +12,7 @@ def index(citySearched = None):
     if citySearched != None: 
         citySearchedData = getWeather(citySearched, os.getenv("WEATHER_API"))
 
-    if citySearchedData == 404:
+    if citySearchedData == 404 or citySearched == "":
         #se citySearched retorna um erro de requisição, aqui se trata o erro. 
         citySearchedData = getWeather('Campinas',  os.getenv("WEATHER_API"))
         error='cidade inválida!'

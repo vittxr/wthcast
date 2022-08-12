@@ -12,3 +12,7 @@ search_icon__box.addEventListener("mouseout", function () {
     search_icon.style.width = "32px";
     search_icon.style.height = "32px";
 })
+
+//add preventDefault ao formulário
+/* var form = document.querySelector(".search-box__form");
+form.addEventListener("submit", () => { event.preventDefault() }) */

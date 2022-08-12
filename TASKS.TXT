@@ -1,0 +1,2 @@
+adicionar preventDefault ao formulário
+simplicar o site (tirar a página de cidade, já que não faz sentido tê-la. )
